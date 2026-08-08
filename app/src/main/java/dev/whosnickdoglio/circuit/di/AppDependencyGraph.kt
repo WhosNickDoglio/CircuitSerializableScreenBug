@@ -26,13 +26,6 @@ interface CircuitProviders {
     @Multibinds
     fun viewFactories(): Set<Ui.Factory>
 
-    @Multibinds
-    fun circuitSerializerRegistrations(): Set<CircuitSerializerRegistration>
-
-    @Provides
-    fun provideCircuitSaver(
-            registrations: Set<CircuitSerializerRegistration>
-    ): CircuitSaver = SerializableCircuitSaver(registrations)
 
     @Provides
     public fun provideCircuit(

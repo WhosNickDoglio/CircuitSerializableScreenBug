@@ -27,7 +27,6 @@ import dev.zacsweers.metro.AssistedInject
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-@CircuitSerializable(AppScope::class)
 data object HomeScreen : Screen {
     data class State(
         val onEvent: (Event) -> Unit,

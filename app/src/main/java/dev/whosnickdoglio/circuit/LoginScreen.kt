@@ -25,7 +25,6 @@ import dev.zacsweers.metro.Inject
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-@CircuitSerializable(AppScope::class)
 data class LoginScreen(
     val bounceBackScreen: Screen? = null,
 ) : Screen {

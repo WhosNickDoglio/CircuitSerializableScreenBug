@@ -28,7 +28,6 @@ import dev.zacsweers.metrox.android.ActivityKey
 @ActivityKey
 class MainActivity(
     private val circuit: Circuit,
-    private val circuitSaver: CircuitSaver,
 ) : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,7 +36,6 @@ class MainActivity(
             CircuitSerializableScreenBugTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     CircuitCompositionLocals(circuit) {
-                        ProvideCircuitSaver(circuitSaver) {
                             val navStack = rememberSaveableNavStack(initialScreens = listOf(
                                 HomeScreen))
                             val navigator = rememberCircuitNavigator(navStack) { /* do something on root */ }
@@ -47,7 +45,6 @@ class MainActivity(
                                 modifier = Modifier.padding(innerPadding)
                             )
                         }
-                    }
                 }
             }
         }
