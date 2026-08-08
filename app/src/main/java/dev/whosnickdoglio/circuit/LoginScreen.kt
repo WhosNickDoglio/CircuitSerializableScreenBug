@@ -23,9 +23,10 @@ import dev.zacsweers.metro.AssistedFactory
 import dev.zacsweers.metro.AssistedInject
 import dev.zacsweers.metro.Inject
 import kotlinx.parcelize.Parcelize
+import kotlinx.serialization.Serializable
 
 @Parcelize
-@CircuitSerializable(AppScope::class)
+@Serializable
 data class LoginScreen(
     val bounceBackScreen: Screen? = null,
 ) : Screen {
